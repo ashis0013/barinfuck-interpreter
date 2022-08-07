@@ -1,10 +1,10 @@
 module BFParser (
   parse
 ) where
+
 import Control.Applicative
 import Data.Maybe
-
-data Token = Inc | Dec | ShiftL | ShiftR | Inp | Out | Loop [Token] deriving (Show, Eq)
+import Instructions
 
 newtype Parser a = Parser { runParser:: String -> Maybe(String, a) }
 
